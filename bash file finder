@@ -1,0 +1,14 @@
+#!bin/bash
+
+echo "file name?"
+read stuff
+echo "okay locate $stuff bitch"
+locate $stuff.exe
+echo
+echo
+echo "okay here is which $stuff fucker"
+which $stuff
+echo
+echo
+echo "finally, here's find $stuff"
+find / -name $stuff* -exec file {} \;
