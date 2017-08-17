@@ -1,0 +1,123 @@
+1.
+10.11.1.22
+10.11.1.115
+
+2.
+snmpwalk -c public -v1 10.11.1.115
+iso.3.6.1.2.1.1.1.0 = STRING: "Linux tophat.acme.com 2.4.20-8 #1 Thu Mar 13 17:54:28 EST 2003 i686"
+iso.3.6.1.2.1.1.2.0 = OID: iso.3.6.1.4.1.8072.3.2.10
+iso.3.6.1.2.1.1.3.0 = Timeticks: (3611363828) 417 days, 23:33:58.28
+iso.3.6.1.2.1.1.4.0 = STRING: "Root <root@localhost> (configure /etc/snmp/snmp.local.conf)"
+iso.3.6.1.2.1.1.5.0 = STRING: "tophat.acme.com"
+iso.3.6.1.2.1.1.6.0 = STRING: "Unknown (edit /etc/snmp/snmpd.conf)"
+iso.3.6.1.2.1.1.8.0 = Timeticks: (1) 0:00:00.01
+iso.3.6.1.2.1.1.9.1.2.1 = OID: iso.3.6.1.2.1.31
+iso.3.6.1.2.1.1.9.1.2.2 = OID: iso.3.6.1.6.3.1
+iso.3.6.1.2.1.1.9.1.2.3 = OID: iso.3.6.1.2.1.49
+iso.3.6.1.2.1.1.9.1.2.4 = OID: iso.3.6.1.2.1.4
+iso.3.6.1.2.1.1.9.1.2.5 = OID: iso.3.6.1.2.1.50
+iso.3.6.1.2.1.1.9.1.2.6 = OID: iso.3.6.1.6.3.16.2.2.1
+iso.3.6.1.2.1.1.9.1.2.7 = OID: iso.3.6.1.6.3.10.3.1.1
+iso.3.6.1.2.1.1.9.1.2.8 = OID: iso.3.6.1.6.3.11.3.1.1
+iso.3.6.1.2.1.1.9.1.2.9 = OID: iso.3.6.1.6.3.15.2.1.1
+iso.3.6.1.2.1.1.9.1.3.1 = STRING: "The MIB module to describe generic objects for network interface sub-layers"
+iso.3.6.1.2.1.1.9.1.3.2 = STRING: "The MIB module for SNMPv2 entities"
+iso.3.6.1.2.1.1.9.1.3.3 = STRING: "The MIB module for managing TCP implementations"
+iso.3.6.1.2.1.1.9.1.3.4 = STRING: "The MIB module for managing IP and ICMP implementations"
+iso.3.6.1.2.1.1.9.1.3.5 = STRING: "The MIB module for managing UDP implementations"
+iso.3.6.1.2.1.1.9.1.3.6 = STRING: "View-based Access Control Model for SNMP."
+iso.3.6.1.2.1.1.9.1.3.7 = STRING: "The SNMP Management Architecture MIB."
+iso.3.6.1.2.1.1.9.1.3.8 = STRING: "The MIB for Message Processing and Dispatching."
+iso.3.6.1.2.1.1.9.1.3.9 = STRING: "The management information definitions for the SNMP User-based Security Model."
+iso.3.6.1.2.1.1.9.1.4.1 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.2 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.3 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.4 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.5 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.6 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.7 = Timeticks: (1) 0:00:00.01
+iso.3.6.1.2.1.1.9.1.4.8 = Timeticks: (1) 0:00:00.01
+iso.3.6.1.2.1.1.9.1.4.9 = Timeticks: (1) 0:00:00.01
+iso.3.6.1.2.1.25.1.1.0 = Timeticks: (71209429) 8 days, 5:48:14.29
+Timeout: No Response from 10.11.1.115
+root@kali:~/Desktop/Lab_Exercises# snmpwalk -c public -v1 10.11.1.22
+iso.3.6.1.2.1.1.1.0 = STRING: "Linux barry 2.4.18-3 #1 Thu Apr 18 07:37:53 EDT 2002 i686"
+iso.3.6.1.2.1.1.2.0 = OID: iso.3.6.1.4.1.2021.250.10
+iso.3.6.1.2.1.1.3.0 = Timeticks: (171536032) 19 days, 20:29:20.32
+iso.3.6.1.2.1.1.4.0 = STRING: "Root <root@localhost> (configure /etc/snmp/snmp.local.conf)"
+iso.3.6.1.2.1.1.5.0 = STRING: "barry"
+iso.3.6.1.2.1.1.6.0 = STRING: "Unknown (edit /etc/snmp/snmpd.conf)"
+iso.3.6.1.2.1.1.8.0 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.2.1 = OID: iso.3.6.1.2.1.31
+iso.3.6.1.2.1.1.9.1.2.2 = OID: iso.3.6.1.6.3.1
+iso.3.6.1.2.1.1.9.1.2.3 = OID: iso.3.6.1.2.1.49
+iso.3.6.1.2.1.1.9.1.2.4 = OID: iso.3.6.1.2.1.4
+iso.3.6.1.2.1.1.9.1.2.5 = OID: iso.3.6.1.2.1.50
+iso.3.6.1.2.1.1.9.1.2.6 = OID: iso.3.6.1.6.3.16.2.2.1
+iso.3.6.1.2.1.1.9.1.2.7 = OID: iso.3.6.1.6.3.10.3.1.1
+iso.3.6.1.2.1.1.9.1.2.8 = OID: iso.3.6.1.6.3.11.3.1.1
+iso.3.6.1.2.1.1.9.1.2.9 = OID: iso.3.6.1.6.3.15.2.1.1
+iso.3.6.1.2.1.1.9.1.3.1 = STRING: "The MIB module to describe generic objects for network interface sub-layers"
+iso.3.6.1.2.1.1.9.1.3.2 = STRING: "The MIB module for SNMPv2 entities"
+iso.3.6.1.2.1.1.9.1.3.3 = STRING: "The MIB module for managing TCP implementations"
+iso.3.6.1.2.1.1.9.1.3.4 = STRING: "The MIB module for managing IP and ICMP implementations"
+iso.3.6.1.2.1.1.9.1.3.5 = STRING: "The MIB module for managing UDP implementations"
+iso.3.6.1.2.1.1.9.1.3.6 = STRING: "View-based Access Control Model for SNMP."
+iso.3.6.1.2.1.1.9.1.3.7 = STRING: "The SNMP Management Architecture MIB."
+iso.3.6.1.2.1.1.9.1.3.8 = STRING: "The MIB for Message Processing and Dispatching."
+iso.3.6.1.2.1.1.9.1.3.9 = STRING: "The management information definitions for the SNMP User-based Security Model."
+iso.3.6.1.2.1.1.9.1.4.1 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.2 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.3 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.4 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.5 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.6 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.7 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.8 = Timeticks: (0) 0:00:00.00
+iso.3.6.1.2.1.1.9.1.4.9 = Timeticks: (0) 0:00:00.00
+End of MIB
+
+# snmpcheck -t 10.11.1.115
+snmpcheck v1.8 - SNMP enumerator
+Copyright (c) 2005-2011 by Matteo Cantoni (www.nothink.org)
+
+ [*] Try to connect to 10.11.1.115
+ [*] Connected to 10.11.1.115
+ [*] Starting enumeration at 2017-08-09 01:49:37
+ [*] Error: No response from remote host "10.11.1.115".
+Signal USR1 received in thread 1, but no signal handler set. at /usr/bin/snmpcheck line 320.
+root@kali:~/Desktop/Lab_Exercises# snmpcheck -t 10.11.1.22
+snmpcheck v1.8 - SNMP enumerator
+Copyright (c) 2005-2011 by Matteo Cantoni (www.nothink.org)
+
+ [*] Try to connect to 10.11.1.22
+ [*] Connected to 10.11.1.22
+ [*] Starting enumeration at 2017-08-09 01:50:15
+
+ [*] System information
+ -----------------------------------------------------------------------------------------------
+
+ Hostname               : barry
+ Description            : Linux barry 2.4.18-3 #1 Thu Apr 18 07:37:53 EDT 2002 i686
+ Uptime system          : 0.00 seconds
+ Uptime SNMP daemon     : 19 days, 20:30:55.68
+ Contact                : Root <root@localhost> (configure /etc/snmp/snmp.local.conf)
+ Location               : Unknown (edit /etc/snmp/snmpd.conf)
+ Motd                   : -
+
+ [*] Network information
+ -----------------------------------------------------------------------------------------------
+
+ IP forwarding enabled   : -
+ Default TTL             : -
+ TCP segments received   : -
+ TCP segments sent       : -
+ TCP segments retrans.   : -
+ Input datagrams         : -
+ Delivered datagrams     : -
+ Output datagrams        : -
+ [*] Wait...don't stop snmpcheck...
+ [*] Wait...don't stop snmpcheck...
+
+ [*] Enumerated 10.11.1.22 in 72.53 seconds
+Signal USR1 received in thread 1, but no signal handler set. at /usr/bin/snmpcheck line 230.
