@@ -1,0 +1,52 @@
+1. tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on tap0, link-type EN10MB (Ethernet), capture size 65535 bytes
+08:37:05.308591 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [S], seq 3998969378, win 22200, options [mss 1110,sackOK,TS val 9026227 ecr 0,nop,wscale 7], length 0
+08:37:05.582028 IP 10.11.1.24.pop3 > 10.11.0.73.41265: Flags [S.], seq 3712662722, ack 3998969379, win 5792, options [mss 1321,sackOK,TS val 649846 ecr 9026227,nop,wscale 5], length 0
+08:37:05.582068 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [.], ack 1, win 174, options [nop,nop,TS val 9026295 ecr 649846], length 0
+08:37:05.838429 IP 10.11.1.24.pop3 > 10.11.0.73.41265: Flags [P.], seq 1:21, ack 1, win 181, options [nop,nop,TS val 649872 ecr 9026295], length 20
+08:37:05.838459 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [.], ack 21, win 174, options [nop,nop,TS val 9026359 ecr 649872], length 0
+08:37:12.155083 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [P.], seq 1:10, ack 21, win 174, options [nop,nop,TS val 9027938 ecr 649872], length 9
+08:37:12.429303 IP 10.11.1.24.pop3 > 10.11.0.73.41265: Flags [.], ack 10, win 181, options [nop,nop,TS val 650531 ecr 9027938], length 0
+08:37:12.490896 IP 10.11.1.24.pop3 > 10.11.0.73.41265: Flags [P.], seq 21:44, ack 10, win 181, options [nop,nop,TS val 650531 ecr 9027938], length 23
+08:37:12.490922 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [.], ack 44, win 174, options [nop,nop,TS val 9028022 ecr 650531], length 0
+08:37:23.099376 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [P.], seq 10:19, ack 44, win 174, options [nop,nop,TS val 9030675 ecr 650531], length 9
+08:37:23.356171 IP 10.11.1.24.pop3 > 10.11.0.73.41265: Flags [P.], seq 44:67, ack 19, win 181, options [nop,nop,TS val 651624 ecr 9030675], length 23
+08:37:23.356208 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [.], ack 67, win 174, options [nop,nop,TS val 9030739 ecr 651624], length 0
+
+2. root@kali:~# tcpdump -i tap0 -X host 10.11.1.24
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on tap0, link-type EN10MB (Ethernet), capture size 65535 bytes
+08:38:11.651054 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [P.], seq 3998969397:3998969400, ack 3712662789, win 174, options [nop,nop,TS val 9042812 ecr 651624], length 3
+	0x0000:  4500 0037 d498 4000 4006 50b2 0a0b 0049  E..7..@.@.P....I
+	0x0010:  0a0b 0118 a131 006e ee5b 6e35 dd4a bd05  .....1.n.[n5.J..
+	0x0020:  8018 00ae 682b 0000 0101 080a 0089 fb7c  ....h+.........|
+	0x0030:  0009 f168 6869 0a                        ...hhi.
+08:38:11.924781 IP 10.11.1.24.pop3 > 10.11.0.73.41265: Flags [P.], seq 1:24, ack 3, win 181, options [nop,nop,TS val 656480 ecr 9042812], length 23
+	0x0000:  4500 004b 5657 4000 4006 cedf 0a0b 0118  E..KVW@.@.......
+	0x0010:  0a0b 0049 006e a131 dd4a bd05 ee5b 6e38  ...I.n.1.J...[n8
+	0x0020:  8018 00b5 2fa5 0000 0101 080a 000a 0460  ..../..........`
+	0x0030:  0089 fb7c 2d45 5252 2055 6e6b 6e6f 776e  ...|-ERR.Unknown
+	0x0040:  2063 6f6d 6d61 6e64 2e0d 0a              .command...
+08:38:11.924818 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [.], ack 24, win 174, options [nop,nop,TS val 9042881 ecr 656480], length 0
+	0x0000:  4500 0034 d499 4000 4006 50b4 0a0b 0049  E..4..@.@.P....I
+	0x0010:  0a0b 0118 a131 006e ee5b 6e38 dd4a bd1c  .....1.n.[n8.J..
+	0x0020:  8010 00ae c748 0000 0101 080a 0089 fbc1  .....H..........
+	0x0030:  000a 0460                                ...`
+08:38:19.402907 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [P.], seq 3:6, ack 24, win 174, options [nop,nop,TS val 9044750 ecr 656480], length 3
+	0x0000:  4500 0037 d49a 4000 4006 50b0 0a0b 0049  E..7..@.@.P....I
+	0x0010:  0a0b 0118 a131 006e ee5b 6e38 dd4a bd1c  .....1.n.[n8.J..
+	0x0020:  8018 00ae 4685 0000 0101 080a 008a 030e  ....F...........
+	0x0030:  000a 0460 6f6b 0a                        ...`ok.
+08:38:19.676288 IP 10.11.1.24.pop3 > 10.11.0.73.41265: Flags [P.], seq 24:47, ack 6, win 181, options [nop,nop,TS val 657254 ecr 9044750], length 23
+	0x0000:  4500 004b 5658 4000 4006 cede 0a0b 0118  E..KVX@.@.......
+	0x0010:  0a0b 0049 006e a131 dd4a bd1c ee5b 6e3b  ...I.n.1.J...[n;
+	0x0020:  8018 00b5 24f3 0000 0101 080a 000a 0766  ....$..........f
+	0x0030:  008a 030e 2d45 5252 2055 6e6b 6e6f 776e  ....-ERR.Unknown
+	0x0040:  2063 6f6d 6d61 6e64 2e0d 0a              .command...
+08:38:19.676320 IP 10.11.0.73.41265 > 10.11.1.24.pop3: Flags [.], ack 47, win 174, options [nop,nop,TS val 9044819 ecr 657254], length 0
+	0x0000:  4500 0034 d49b 4000 4006 50b2 0a0b 0049  E..4..@.@.P....I
+	0x0010:  0a0b 0118 a131 006e ee5b 6e3b dd4a bd33  .....1.n.[n;.J.3
+	0x0020:  8010 00ae bc96 0000 0101 080a 008a 0353  ...............S
+	0x0030:  000a 0766          
+
+"-s" is data size of captured data in bytes
