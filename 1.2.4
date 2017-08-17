@@ -1,0 +1,10 @@
+1. Changed the password.
+2. root@kali:~# service ssh start
+[ ok ] Starting OpenBSD Secure Shell server: sshd.
+root@kali:~# netstat -antp|grep sshd
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      11249/sshd      
+tcp6       0      0 :::22                   :::*                    LISTEN      11249/sshd      
+root@kali:~# 
+3. root@kali:~# update-rc.d ssh enable
+update-rc.d: using dependency based boot sequencing
+root@kali:~# 
