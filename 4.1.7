@@ -1,0 +1,116 @@
+for ip in $(cat dnslist.txt); do host $ip.megacorpone.com;done| grep -v ";;"
+www.megacorpone.com has address 38.100.193.76
+mail.megacorpone.com has address 38.100.193.84
+router.megacorpone.com has address 38.100.193.91
+ns1.megacorpone.com has address 38.100.193.70
+ns2.megacorpone.com has address 38.100.193.80
+ns3.megacorpone.com has address 38.100.193.90
+
+
+root@kali:~# host -l megacorpone.com ns2.megacorpone.com
+Using domain server:
+Name: ns2.megacorpone.com
+Address: 38.100.193.80#53
+Aliases: 
+
+megacorpone.com name server ns1.megacorpone.com.
+megacorpone.com name server ns2.megacorpone.com.
+megacorpone.com name server ns3.megacorpone.com.
+admin.megacorpone.com has address 38.100.193.83
+beta.megacorpone.com has address 38.100.193.69
+fs1.megacorpone.com has address 38.100.193.82
+intranet.megacorpone.com has address 38.100.193.81
+mail.megacorpone.com has address 38.100.193.84
+mail2.megacorpone.com has address 38.100.193.73
+ns1.megacorpone.com has address 38.100.193.70
+ns2.megacorpone.com has address 38.100.193.80
+ns3.megacorpone.com has address 38.100.193.90
+router.megacorpone.com has address 38.100.193.91
+siem.megacorpone.com has address 38.100.193.89
+snmp.megacorpone.com has address 38.100.193.85
+support.megacorpone.com has address 173.246.47.170
+syslog.megacorpone.com has address 38.100.193.66
+test.megacorpone.com has address 38.100.193.67
+vpn.megacorpone.com has address 38.100.193.77
+www.megacorpone.com has address 38.100.193.76
+www2.megacorpone.com has address 38.100.193.79
+
+
+
+
+1.
+host -l www.megacorpone.com ns1.megacorpone.com
+; Transfer failed.
+Using domain server:
+Name: ns1.megacorpone.com
+Address: 38.100.193.70#53
+Aliases: 
+
+Host www.megacorpone.com.localdomain not found: 9(NOTAUTH)
+; Transfer failed.
+
+2.
+#!/bin/bash
+if [ -z "$1" ]; then
+echo "[*] Simple Zone transfer script"
+echo "[*] Usage   : $0 www.megacorpone.com"
+exit 0
+fi
+
+for server in $(host -t ns $1 |cut -d" " -f4);do
+
+host -l $1 $server |grep "has address"
+
+done
+
+3.
+root@kali:~# dnsrecon -d megacorpone.com -t axfr
+[*] Testing NS Servers for Zone Transfer
+[*] Checking for Zone Transfer for megacorpone.com name servers
+[*] Resolving SOA Record
+[*] 	 SOA ns1.megacorpone.com 38.100.193.70
+[*] Resolving NS Records
+[*] NS Servers found:
+[*] 	NS ns1.megacorpone.com 38.100.193.70
+[*] 	NS ns2.megacorpone.com 38.100.193.80
+[*] 	NS ns3.megacorpone.com 38.100.193.90
+[*] Removing any duplicate NS server IP Addresses...
+[*]  
+[*] Trying NS server 38.100.193.80
+[*] 38.100.193.80 Has port 53 TCP Open
+[*] Zone Transfer was successful!!
+[*] 	 MX @.megacorpone.com fb.mail.gandi.net 217.70.184.161
+[*] 	 MX @.megacorpone.com fb.mail.gandi.net 217.70.184.162
+[*] 	 MX @.megacorpone.com fb.mail.gandi.net 217.70.184.163
+[*] 	 MX @.megacorpone.com spool.mail.gandi.net 217.70.184.6
+[*] 	 A admin.megacorpone.com 38.100.193.83
+[*] 	 A fs1.megacorpone.com 38.100.193.82
+[*] 	 A www2.megacorpone.com 38.100.193.79
+[*] 	 A test.megacorpone.com 38.100.193.67
+[*] 	 A ns1.megacorpone.com 38.100.193.70
+[*] 	 A ns2.megacorpone.com 38.100.193.80
+[*] 	 A ns3.megacorpone.com 38.100.193.90
+[*] 	 A www.megacorpone.com 38.100.193.76
+[*] 	 A siem.megacorpone.com 38.100.193.89
+[*] 	 A mail2.megacorpone.com 38.100.193.73
+[*] 	 A router.megacorpone.com 38.100.193.91
+[*] 	 A mail.megacorpone.com 38.100.193.84
+[*] 	 A vpn.megacorpone.com 38.100.193.77
+[*] 	 A snmp.megacorpone.com 38.100.193.85
+[*] 	 A syslog.megacorpone.com 38.100.193.66
+[*] 	 A beta.megacorpone.com 38.100.193.69
+[*] 	 A intranet.megacorpone.com 38.100.193.81
+[*] 	 A support.megacorpone.com 173.246.47.170
+[*]  
+[*] Trying NS server 38.100.193.70
+[*] 38.100.193.70 Has port 53 TCP Open
+[-] Zone Transfer Failed!
+[-] 
+[*]  
+[*] Trying NS server 38.100.193.90
+[*] 38.100.193.90 Has port 53 TCP Open
+[-] Zone Transfer Failed!
+[-] 
+root@kali:~# 
+
+
