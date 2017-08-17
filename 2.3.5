@@ -1,0 +1,57 @@
+1.
+No.     Time           Source                Destination           Protocol Length Info
+     16 4.195692000    10.11.0.73            10.11.1.24            TCP      66     40608 > pop3 [FIN, ACK] Seq=1 Ack=1 Win=174 Len=0 TSval=7997790 TSecr=28799
+
+Frame 16: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface 0
+Ethernet II, Src: ba:e0:73:42:5e:f5 (ba:e0:73:42:5e:f5), Dst: Vmware_89:1f:b3 (00:50:56:89:1f:b3)
+Internet Protocol Version 4, Src: 10.11.0.73 (10.11.0.73), Dst: 10.11.1.24 (10.11.1.24)
+Transmission Control Protocol, Src Port: 40608 (40608), Dst Port: pop3 (110), Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     19 4.791073000    10.11.0.73            10.11.1.24            TCP      66     [TCP Retransmission] 40608 > pop3 [FIN, ACK] Seq=1 Ack=1 Win=174 Len=0 TSval=7997939 TSecr=28799
+
+Frame 19: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface 0
+Ethernet II, Src: ba:e0:73:42:5e:f5 (ba:e0:73:42:5e:f5), Dst: Vmware_89:1f:b3 (00:50:56:89:1f:b3)
+Internet Protocol Version 4, Src: 10.11.0.73 (10.11.0.73), Dst: 10.11.1.24 (10.11.1.24)
+Transmission Control Protocol, Src Port: 40608 (40608), Dst Port: pop3 (110), Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     21 5.329354000    10.11.1.24            10.11.0.73            TCP      78     pop3 > 40608 [ACK] Seq=1 Ack=2 Win=181 Len=0 TSval=31679 TSecr=7997939 SLE=1 SRE=2
+
+Frame 21: 78 bytes on wire (624 bits), 78 bytes captured (624 bits) on interface 0
+Ethernet II, Src: Vmware_89:1f:b3 (00:50:56:89:1f:b3), Dst: ba:e0:73:42:5e:f5 (ba:e0:73:42:5e:f5)
+Internet Protocol Version 4, Src: 10.11.1.24 (10.11.1.24), Dst: 10.11.0.73 (10.11.0.73)
+Transmission Control Protocol, Src Port: pop3 (110), Dst Port: 40608 (40608), Seq: 1, Ack: 2, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     22 5.380383000    10.11.1.24            10.11.0.73            TCP      66     pop3 > 40608 [FIN, ACK] Seq=1 Ack=2 Win=181 Len=0 TSval=31679 TSecr=7997939
+
+Frame 22: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface 0
+Ethernet II, Src: Vmware_89:1f:b3 (00:50:56:89:1f:b3), Dst: ba:e0:73:42:5e:f5 (ba:e0:73:42:5e:f5)
+Internet Protocol Version 4, Src: 10.11.1.24 (10.11.1.24), Dst: 10.11.0.73 (10.11.0.73)
+Transmission Control Protocol, Src Port: pop3 (110), Dst Port: 40608 (40608), Seq: 1, Ack: 2, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     23 5.380417000    10.11.0.73            10.11.1.24            TCP      66     40608 > pop3 [ACK] Seq=2 Ack=2 Win=174 Len=0 TSval=7998086 TSecr=31679
+
+Frame 23: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface 0
+Ethernet II, Src: ba:e0:73:42:5e:f5 (ba:e0:73:42:5e:f5), Dst: Vmware_89:1f:b3 (00:50:56:89:1f:b3)
+Internet Protocol Version 4, Src: 10.11.0.73 (10.11.0.73), Dst: 10.11.1.24 (10.11.1.24)
+Transmission Control Protocol, Src Port: 40608 (40608), Dst Port: pop3 (110), Seq: 2, Ack: 2, Len: 0
+
+2.
+Beginning of a handshake
+21 5.329354000    10.11.1.24            10.11.0.73            TCP      78     pop3 > 40608 [ACK] Seq=1 Ack=2 Win=181 Len=0 TSval=31679 TSecr=7997939 SLE=1 SRE=2
+When I stopped the handshake
+22 5.380383000    10.11.1.24            10.11.0.73            TCP      66     pop3 > 40608 [FIN, ACK] Seq=1 Ack=2 Win=181 Len=0 TSval=31679 TSecr=7997939
+
+
+3.
+Following a login is easy as long as it isn't encrypted or over a clear text protocol such as early telenet.
+
+4.
+See #1
+
+5.
+see #1
+
